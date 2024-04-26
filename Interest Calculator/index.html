@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Interest Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Simple Interest Calculator</h1>
+
+        <form id="interestForm">
+
+            <!-- PRINCIPAL -->
+            <div class="input-group" id="principalInput">
+                <label for="principal">Principal</label>
+                <input type="number" id="principal" placeholder="Enter Principal Amount" required>
+            </div>
+
+            <!-- RATE -->
+            <div class="input-group" id="rateInput">
+                <label for="rate">Rate (%)</label>
+                <input type="number" id="rate" placeholder="Enter Interest Rate" required>
+            </div>
+
+            <!-- TIME -->
+            <div class="input-group" id="timeInput">
+                <label for="time">Time</label>
+                <div id="timeUnit_container">
+                    <input type="number" id="time" placeholder="Enter Time" required>
+                    <select id="timeUnit" onchange="handleTimeUnitChange()" required>
+                        <option value="" disabled selected>Select Time Unit</option>
+                        <option value="days">Days</option>
+                        <option value="months">Months</option>
+                        <option value="years">Years</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </form>
+
+        <!-- CALCULATE -->
+        <div class="button-group" id="calculateButton">
+            <button type="button" onclick="calculate()">Calculate</button>
+        </div>
+
+        <!-- OUTPUT -->
+        <div id="outputContainer">
+            <div id="siContainer" class="si_ta_container">
+                The Simple Intrest is: <span id="si"></span>
+            </div>
+            <div id="taContainer" class="si_ta_container">
+                The Total Amount is: <span id="ta"></span>
+            </div>
+
+        </div>
+
+        <div id="result"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
